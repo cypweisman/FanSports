@@ -1,0 +1,17 @@
+<h2>Draft</h2>
+
+<ul>
+  <% @shuffled_teams.each do |team| %>
+  <li>
+    <%= team.name %>
+  </li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @free_agents.each do |free_agent| %>
+  <li>
+    <%= free_agent.name %>
+  </li>
+  <% end %>
+</ul>

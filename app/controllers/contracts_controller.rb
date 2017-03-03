@@ -9,7 +9,11 @@ class ContractsController < ApplicationController
     @player.team_id = params[:team_id]
     @player.save
     next_pick
-    redirect_to drafts_path
+    if get_round == 7
+      redirect_to teams_path
+    else
+      redirect_to drafts_path
+    end
   end
 
 end

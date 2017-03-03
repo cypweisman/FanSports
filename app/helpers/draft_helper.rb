@@ -7,6 +7,10 @@ module DraftHelper
     @@drafting_counter
   end
 
+  def get_round
+    @@round
+  end
+
   def set_shuffled_teams
     @@shuffled_teams = Team.all.shuffle
   end

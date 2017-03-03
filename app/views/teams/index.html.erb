@@ -1,6 +1,18 @@
 <h2>All Teams</h2>
 
 
+  <div >
+    <%= form_for @draft, {action: "create"} do |f| %>
+      <fieldset>
+
+          Number of ROunds <%= f.number_field :number_of_rounds %>
+
+          <%= f.submit "Create" %>
+
+      </fieldset>
+    <% end %>
+  </div>
+
 <%= link_to "Draft Roster", drafts_path %>
 
 <ul>

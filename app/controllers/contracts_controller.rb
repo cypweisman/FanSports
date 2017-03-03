@@ -8,11 +8,12 @@ class ContractsController < ApplicationController
     @player = Player.find(@contract.player_id)
     @player.team_id = params[:team_id]
     @player.save
-    next_pick
-    if get_round == 7
+    @draft = Draft.find(params)
+    @draft.next_pick
+    if @draft.get_round == 7
       redirect_to teams_path
     else
-      redirect_to drafts_path
+      redirect_to draft_path(@draft.id)
     end
   end
 

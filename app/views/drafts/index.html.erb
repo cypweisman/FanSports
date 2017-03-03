@@ -11,7 +11,8 @@
 <ul>
   <% @free_agents.each do |free_agent| %>
   <li>
-    <%= free_agent.name %>
+    <%= link_to "#{free_agent.name}", contracts_path(player_id: free_agent.id, team_id: @drafting_team.id , salary: 1000), method: :post %>
   </li>
   <% end %>
 </ul>
+

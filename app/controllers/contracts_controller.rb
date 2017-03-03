@@ -1,3 +1,5 @@
+include DraftHelper
+
 class ContractsController < ApplicationController
 
   def create
@@ -6,6 +8,7 @@ class ContractsController < ApplicationController
     @player = Player.find(@contract.player_id)
     @player.team_id = params[:team_id]
     @player.save
+    next_pick
     redirect_to drafts_path
   end
 

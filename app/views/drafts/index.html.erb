@@ -1,13 +1,14 @@
 <h2>Draft</h2>
 
-<ul>
+<ol>
   <% @shuffled_teams.each do |team| %>
   <li>
     <%= team.name %>
   </li>
   <% end %>
-</ul>
+</ol>
 
+<p>Drafting Team: <%= @drafting_team.name %></p>
 <ul>
   <% @free_agents.each do |free_agent| %>
   <li>

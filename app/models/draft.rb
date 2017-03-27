@@ -4,10 +4,13 @@ class Draft < ApplicationRecord
   @@round = 1
   @@drafting_counter = 0
 
-
   def get_drafting_counter
     @@drafting_counter
   end
+
+  # def set_drafting_counter(number)
+  #   drafting_counter = drafting_counter + number
+  # end
 
   def get_round
     @@round
@@ -34,6 +37,10 @@ class Draft < ApplicationRecord
       @@drafting_counter = 0
       @@shuffled_teams.reverse!
       @@round +=1
+      if @@round == self.number_of_rounds + 1
+        self.open = false
+        self.save
+      end
     end
   end
 end

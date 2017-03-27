@@ -1,2 +1,8 @@
 <h2><%= @team.name %></h2>
 
+<ul>
+  <% @team.players.each do |player| %>
+  <li><%= player.name %></li>
+  <% end %>
+</ul>
+

@@ -10,7 +10,7 @@ class ContractsController < ApplicationController
     @player.team_id = params[:team_id]
     @player.save
     @draft = Draft.find(params[:draft_id])
-    @draft.next_pick
+    next_pick(@draft)
     redirect_to draft_path(@draft.id)
   end
 

@@ -6,6 +6,7 @@ class DraftsController < ApplicationController
     p params
     @draft = Draft.new(draft_params)
     if @draft.save
+      create_draft_variables
       redirect_to draft_path(@draft)
     else
       render teams_path
@@ -14,10 +15,11 @@ class DraftsController < ApplicationController
 
   def show
     @draft = Draft.find(params[:id])
-    @shuffled_teams = @draft.get_shuffled_teams
-    p @shuffled_teams
+    @shuffled_teams = session[:shuffled_teams]
+    # p "------------------------"
+    # p session[:shuffled_teams]
     @free_agents = Player.where(team_id: nil)
-    @drafting_team = @shuffled_teams[@draft.get_drafting_counter]
+    @drafting_team = @shuffled_teams[session[:drafting_counter]]
   end
 
   def draft_params

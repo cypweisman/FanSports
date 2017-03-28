@@ -2,10 +2,11 @@ class Draft < ApplicationRecord
   attr_accessor :round, :shuffled_teams, :drafting_counter
 
   def initialize(draft_params)
+    @round = 1
+    @drafting_counter = 0
+    @shuffled_teams = []
     super(draft_params)
-    round = 1
-    drafting_counter = 0
-    shuffled_teams = []
+    #the at signs did the trick; remember also how rob tested it in the console
   end
 
   # @@shuffled_teams = []

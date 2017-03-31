@@ -1,0 +1,16 @@
+<h1>Create Contract</h1>
+
+<%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
+  Player name: <%= @freeagent.name %><br />
+  <%= f.hidden_field :player_id, :value => @freeagent.id %>
+
+  <%= f.collection_select :team_id, Team.all, :id, :name %>
+
+
+  Player Salary: <%= f.number_field :salary %><br />
+
+  <%= f.hidden_field :active, :value => :true %>
+
+  <%= f.submit %>
+
+<% end %>

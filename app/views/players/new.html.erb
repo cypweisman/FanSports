@@ -1,0 +1,7 @@
+<h1>Create Player</h1>
+
+<%= form_for @player, url: players_path(@player), method: :post do |f| %>
+  Player Name: <%= f.text_field :name %><br />
+  Player Rating : <%= f.text_field :rating %><br />
+  <%= f.submit %>
+<% end %>

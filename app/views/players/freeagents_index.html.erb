@@ -1,0 +1,7 @@
+<h1>Free Agents</h1>
+
+<ul>
+  <% @freeagents.each do |freeagent| %>
+    <%= link_to "#{freeagent.name}", new_contract_path(freeagent_id: freeagent.id) %>
+  <% end %>
+</ul>

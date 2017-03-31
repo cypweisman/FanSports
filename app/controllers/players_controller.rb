@@ -15,6 +15,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.find(params[:id])
+    @active_contract = @player.active_contract
   end
 
   def freeagents_index

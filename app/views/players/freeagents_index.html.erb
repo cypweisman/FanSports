@@ -2,6 +2,6 @@
 
 <ul>
   <% @freeagents.each do |freeagent| %>
-    <li><%= freeagent.name %></li>
+    <%= link_to "#{freeagent.name}", new_contract_path(freeagent_id: freeagent.id) %>
   <% end %>
 </ul>

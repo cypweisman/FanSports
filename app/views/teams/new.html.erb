@@ -1,0 +1,7 @@
+<h1>Create Team</h1>
+
+<%= form_for @team, url: teams_path(@team), method: :post do |f| %>
+  Team Name: <%= f.text_field :name %><br />
+  Team Owner : <%= f.text_field :owner %><br />
+  <%= f.submit %>
+<% end %>

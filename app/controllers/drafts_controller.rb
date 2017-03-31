@@ -1,5 +1,6 @@
 include DraftHelper
 
+
 class DraftsController < ApplicationController
 
   def create
@@ -16,6 +17,7 @@ class DraftsController < ApplicationController
   def show
     @draft = Draft.find(params[:id])
     @shuffled_teams = session[:shuffled_teams]
+    @teams_objects = Team.all
     # p "------------------------"
     # p session[:shuffled_teams]
     @free_agents = Player.where(team_id: nil)

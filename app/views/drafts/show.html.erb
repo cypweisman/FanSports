@@ -8,6 +8,20 @@
   <% end %>
 </ol>
 
+<div id="team_rosters" style="float: right;">
+  <h2>Team Rosters</h2>
+  <ul>
+    <% @teams_objects.each do |team| %>
+    <li><%= team.name %></li>
+      <% team.players.each do |player| %>
+      <ul>
+        <li><%= player.name %></li>
+      </ul>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
 <p>Drafting Team: <%= @drafting_team["name"] %></p>
 <%if @draft.open %>
   <ul>
@@ -17,6 +31,7 @@
     </li>
     <% end %>
   </ul>
+
 <% else %>
   <h2>Draft is closed!</h2>
   <%= link_to "Go to Teams Page", teams_path %>

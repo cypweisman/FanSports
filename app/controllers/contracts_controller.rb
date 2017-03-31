@@ -10,8 +10,8 @@ class ContractsController < ApplicationController
     redirect_to draft_path(@draft.id)
   end
 
-  # def contract_params
-  #   params.require(:contract).permit(:team_id, :player_id, :salary, :draft)
-  # end
+  def contract_params
+    params.require(:contract).permit(:team_id, :player_id, :salary, :active)
+  end
 
 end

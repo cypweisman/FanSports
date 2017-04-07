@@ -1,0 +1,52 @@
+.banner {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 100%;
+  background-color: red;
+  /*background-image: url("../images/american-flag-1459201553ppe.jpg");
+  background-size: 80%;
+  background-position: center;*/
+}
+
+.heropic {
+  border-radius: 50%;
+  height:400px;
+  width:50%;
+  display: block;
+  margin: auto;
+}
+
+.flagpic {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+}
+
+
+.party-list {
+  color: red;
+}
+
+h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.form-field {
+  padding-bottom: 10px;
+  text-align: center;
+  font-family: helvetica;
+  color: #001353;
+}
+
+label {
+  font-size: 25px;
+}
+
+#home-details {
+  margin: 15px;
+
+}

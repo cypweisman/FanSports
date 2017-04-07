@@ -1,28 +1,36 @@
-<h2>All Teams</h2>
-<%= link_to "Create Team", new_team_path %>
-<%= link_to "Create Player", new_player_path %>
-<%= link_to "Sign Free Agent", player_freeagents_path %>
 
 
-  <div >
+<div class="banner" >
+  <div class="container-fluid">
+    <img class="heropic" src="<%= asset_path( '4031665498_26ed9d1932_b.jpg') %>"   />
+ </div>
+</div>
+
+<section id="home-details">
+  <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
     <%= form_for @draft, {action: "create"} do |f| %>
       <fieldset>
+        <div class="form-field">
+         <label for="num">Number of Rounds</label><br>
+          <%= f.number_field :number_of_rounds, type: "text", class: "form-control, col-sm-4", id: "num" %>
+        </div>
 
-          Number of ROunds <%= f.number_field :number_of_rounds %>
-
-          <%= f.submit "Create" %>
+        <div class="form-field">
+          <%= f.submit "Create Draft", class: "btn btn-primary", name: "commit", type: "submit" %>
+        </div>
 
       </fieldset>
     <% end %>
+
+
+
+  <h2 class="party-list">Political Parties</h2>
+  <div class="list-group">
+    <% @teams.each do |team| %>
+
+      <%= link_to "#{team.name}", team_path(team), class: "list-group-item" %>
+
+    <% end %>
   </div>
-
-<%= link_to "Draft Roster", drafts_path %>
-
-<ul>
-  <% @teams.each do |team| %>
-  <li>
-    <%= link_to "#{team.name}", team_path(team) %>
-  </li>
-  <% end %>
-</ul>
+</section>
 

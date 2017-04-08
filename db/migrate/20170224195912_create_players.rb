@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[5.0]
       t.integer :rating, null: false
       t.integer :jersey
       t.integer :team_id
+      t.integer :account_id, null: false
 
       t.timestamps null: false
     end

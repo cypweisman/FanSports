@@ -1,8 +1,9 @@
 module DraftHelper
-  def create_draft_variables
+  def create_draft_variables(draft_id)
+    session[:draft_id] = draft_id
     session[:round] = 1
     session[:drafting_counter] = 0
-    session[:shuffled_teams] = Team.all.shuffle
+    session[:shuffled_teams] = Team.where(account_id: session[:account_id]).shuffle
   end
 
   def next_pick(draft)

@@ -17,6 +17,8 @@
         <%= f.text_field :owner, type: "text", class: "form-control, col-sm-4", id: "owner" %>
       </div>
 
+       <%= f.hidden_field :account_id, :value => session[:account_id] %>
+
       <div class="form-field">
         <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
       </div>

@@ -1,0 +1,20 @@
+<h1>Sign In</h1>
+
+
+<%= form_tag(sessions_path, method: "post") do %>
+  <fieldset>
+    <legend>Login</legend>
+
+    <%= label_tag(:account_name, "Account Name") %>
+    <%= text_field_tag :account_name %>
+
+
+
+    <%= label_tag :password, "Password" %>
+    <%= password_field_tag :password %>
+
+
+    <%= submit_tag("Submit") %>
+  </fieldset>
+
+<% end %>

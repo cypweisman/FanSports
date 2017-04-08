@@ -1,9 +1,18 @@
-<h2><%= @team.name %></h2>
-<h3><%= @team.owner %></h3>
 
-<ul>
-  <% @team.players.each do |player| %>
-  <li><%= player.name %></li>
-  <% end %>
-</ul>
+<div>
+
+   <img class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+
+  <h2><%= @team.name %></h2>
+  <h3>Owner: <%= @team.owner %></h3>
+<div id="create-form" style="text-align: center;">
+  <div style="margin: auto;" class="list-group, col-sm-4">
+     <% @team.players.each do |player| %>
+        <%= link_to "#{player.name}", player_path(player), class: "list-group-item" %>
+
+      <% end %>
+  </div>
+</div>
+
+</div>
 

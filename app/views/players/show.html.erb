@@ -1,3 +1,11 @@
-<h1><%= @player.name %></h1>
-<h2><%= @player.rating %></h2>
-<h3>Active Salary <%= @active_contract %></h3>
+
+<div style="background-color: #8eb2ed;">
+  <div style="padding-top: 25px;" id="create-form">
+     <div class="createpic">
+        <img  class="createpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+    </div >
+    <h1><%= @player.name %></h1>
+    <h2>Rating: <%= @player.rating %></h2>
+    <h3>Active Salary: <%= @active_contract %></h3>
+  </div>
+</div>

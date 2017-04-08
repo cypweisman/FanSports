@@ -1,7 +1,14 @@
-<h1>Free Agents</h1>
+<div>
+  <h2 style="padding-bottom: 15px; font-size: 40px; color: red; text-align: center;">Free Agents</h2>
 
-<ul>
-  <% @freeagents.each do |freeagent| %>
-    <%= link_to "#{freeagent.name}", new_contract_path(freeagent_id: freeagent.id) %>
-  <% end %>
-</ul>
+   <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+
+<div id="create-form" style="text-align: center;">
+  <div style="margin: auto;" class="list-group, col-sm-4">
+      <% @freeagents.each do |freeagent| %>
+        <%= link_to "#{freeagent.name}", new_contract_path(freeagent_id: freeagent.id), class: "list-group-item" %>
+      <% end %>
+  </div>
+</div>
+
+</div>

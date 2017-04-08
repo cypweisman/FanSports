@@ -1,3 +1,8 @@
+
+.admin-links {
+  margin-left: 80%;
+}
+
 .banner {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -7,6 +12,15 @@
   /*background-image: url("../images/american-flag-1459201553ppe.jpg");
   background-size: 80%;
   background-position: center;*/
+}
+
+
+.createpic {
+  border-radius: 50%;
+  height:350px;
+  width:55%;
+  margin-left: 35%;
+  position: absolute;
 }
 
 .heropic {
@@ -30,6 +44,14 @@
   color: red;
 }
 
+.title {
+  font-family: Impact, sans-serif;
+  color: #001353;
+  text-align: center;
+  font-size: 70px;
+
+}
+
 h2 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -37,9 +59,13 @@ h2 {
 
 .form-field {
   padding-bottom: 10px;
-  text-align: center;
+
   font-family: helvetica;
-  color: #001353;
+
+}
+
+fieldset {
+  text-align: center;
 }
 
 label {
@@ -48,5 +74,11 @@ label {
 
 #home-details {
   margin: 15px;
+
+}
+
+#create-form {
+  margin: 40px;
+  padding-bottom: 10px;
 
 }

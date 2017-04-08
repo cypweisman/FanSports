@@ -1,7 +1,27 @@
-<h1>Create Player</h1>
 
-<%= form_for @player, url: players_path(@player), method: :post do |f| %>
-  Player Name: <%= f.text_field :name %><br />
-  Player Rating : <%= f.text_field :rating %><br />
-  <%= f.submit %>
-<% end %>
+<div style="background-color: #c4342f;">
+
+  <div class="createpic">
+      <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
+  </div>
+
+  <div id="create-form">
+    <h2 style="padding-bottom: 15px;">Create Player</h2>
+    <%= form_for @player, url: players_path(@player), method: :post do |f| %>
+      <div class="form-field">
+        <label for="name">Player Name</label><br>
+        <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+      </div>
+
+      <div class="form-field">
+        <label for="rating">Rating</label><br>
+       <%= f.text_field :rating, type: "text", class: "form-control, col-sm-4", id: "rating" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

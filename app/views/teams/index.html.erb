@@ -1,4 +1,4 @@
-
+<h1 class="title">Draft Your Presidential Cabinet</h1>
 
 <div class="banner" >
   <div class="container-fluid">
@@ -11,7 +11,7 @@
     <%= form_for @draft, {action: "create"} do |f| %>
       <fieldset>
         <div class="form-field">
-         <label for="num">Number of Rounds</label><br>
+         <label style="color: #001353;" for="num">Number of Rounds</label><br>
           <%= f.number_field :number_of_rounds, type: "text", class: "form-control, col-sm-4", id: "num" %>
         </div>
 

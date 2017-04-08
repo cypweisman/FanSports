@@ -1,7 +1,26 @@
-<h1>Create Team</h1>
+<div style="background-color: #8eb2ed;">
 
-<%= form_for @team, url: teams_path(@team), method: :post do |f| %>
-  Team Name: <%= f.text_field :name %><br />
-  Team Owner : <%= f.text_field :owner %><br />
-  <%= f.submit %>
-<% end %>
+  <div class="createpic">
+      <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
+  </div>
+
+  <div id="create-form">
+    <h2 style="padding-bottom: 15px;">Create Team</h2>
+    <%= form_for @team, url: teams_path(@team), method: :post do |f| %>
+      <div class="form-field">
+        <label for="name">Team Name</label><br>
+        <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+      </div>
+
+      <div class="form-field">
+        <label for="owner">Owner</label><br>
+        <%= f.text_field :owner, type: "text", class: "form-control, col-sm-4", id: "owner" %>
+      </div>
+
+      <div class="form-field">
+        <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+      </div>
+    <% end %>
+  </div>
+
+</div>

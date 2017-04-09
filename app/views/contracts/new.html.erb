@@ -2,12 +2,12 @@
   <h2 class="page-title"> Sign Free Agent</h2>
 
   <section>
-    <div style="background-color: #8eb2ed;">
+    <div style="background-color:#bb0114;color:white;">
       <div class="createpic">
         <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
       </div>
       <div id="create-form">
-        <h2 style="padding-bottom: 15px;"><i style="color:red;"><%= @freeagent.name %></i> </h2>
+        <h2 style="padding-bottom: 15px;"><i style="color:#001b7f;"><%= @freeagent.name %></i> </h2>
         <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
           <div class="form-field">
             <label for="name">Political Party</label><br>

@@ -1,11 +1,15 @@
-<h1>Sign Up</h1>
+<h1 style="padding:15px;">Sign Up...</h1>
 
-<%= form_for @account, {action: "create"} do |f| %>
-<fieldset>
-  <legend>Register</legend>
-  <%= f.text_field :account_name, placeholder: "account name" %>
-  <%= f.email_field :account_email, placeholder: "account email" %>
-  <%= f.password_field :password, placeholder: "password" %>
-  <%= f.submit "Create" %>
-</fieldset>
-<% end %>
+<p style="padding:15px;">How it works: you and your friends get trippy (in whatever way you see fit), then together you create political parties and political candidates that you can then draft to your presidential cabinet!</p>
+
+
+    <%= form_for @account, {action: "create"} do |f| %>
+      <fieldset>
+
+        <%= f.text_field :account_name, placeholder: "Account Name" %><br><br>
+        <%= f.email_field :account_email, placeholder: "Account Email" %><br><br>
+        <%= f.password_field :password, placeholder: "Password" %><br><br>
+        <%= f.submit "Create" %>
+      </fieldset>
+    <% end %>
+

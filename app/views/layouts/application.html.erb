@@ -9,21 +9,28 @@
   </head>
 
   <body>
-    <div class="navbar">
+    <nav class="navbar">
 
       <% if logged_in? %>
-        <%= link_to "Home", teams_path, class: "home-link" %>
-        <ul class="admin-links">
-          <li><%= link_to "Create Team", new_team_path %></li>
-          <li><%= link_to "Create Player", new_player_path %></li>
-          <li><%= link_to "Sign Free Agent", player_freeagents_path %></li>
-        </ul>
-         <%= link_to "logout", session_path(session[:account_id]), :method => :delete %>
+        <div class="logged_in-links">
+          <%= link_to "[Home]", teams_path %><br>
+          <%= link_to "[Logout]", session_path(session[:account_id]), :method => :delete %>
+        </div>
+
+        <div class="admin-links">
+          <%= link_to "[Create Party]", new_team_path, class: "admin-link" %>
+          <%= link_to "[Create Candidate]", new_player_path, class: "admin-link" %>
+          <%= link_to "[Sign Free Agent]", player_freeagents_path, class: "admin-link" %>
+        </div>
       <% else %>
         <%= link_to "sign up", new_account_path, :method => :get %>
         <%= link_to "sign in", new_session_path, :method => :get %>
       <% end %>
-    </div>
+    </nav>
+
     <%= yield %>
+    <footer>
+      <p>Thanks 'merica</p>
+    </footer>
   </body>
 </html>

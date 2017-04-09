@@ -1,20 +1,21 @@
+ <h2 style="padding: 40px;font-size: 40px; color: red; text-align: center;"> Create Political Candidate </h2>
 
 <div style="background-color: #c4342f;">
 
-  <div class="createpic">
-      <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
+  <div id="createpicplayer">
+      <img  id="createpicplayer" src="<%= asset_path( 'Rally_to_Restore_Sanity_andor_Fear_-_Colbert_2.jpg') %>"  />
   </div>
 
-  <div id="create-form">
-    <h2 style="padding-bottom: 15px;">Create Player</h2>
+  <div id="create-form" style="padding-top: 15px;">
+
     <%= form_for @player, url: players_path(@player), method: :post do |f| %>
       <div class="form-field">
-        <label for="name">Player Name</label><br>
+        <label for="name">Candidate Name</label><br>
         <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
       </div>
 
       <div class="form-field">
-        <label for="rating">Rating</label><br>
+        <label for="rating">Competency</label><br>
        <%= f.text_field :rating, type: "text", class: "form-control, col-sm-4", id: "rating" %>
       </div>
 

@@ -1,7 +1,21 @@
 
 .admin-links {
-  margin-left: 80%;
+  display: inline-block;
+  margin-left:60%;
+  padding-bottom: 10px;
+
 }
+
+
+.logged_in-links {
+  margin-right: 80%;
+
+}
+
+.admin-link {
+  padding-right: 10px;
+}
+
 
 .banner {
   margin-top: 10px;
@@ -19,14 +33,53 @@
   border-radius: 50%;
   height:350px;
   width:55%;
+  margin-left: 38%;
+  position: absolute;
+}
+
+#createpicplayer {
+  border-radius: 50%;
+  height:430px;
+  width:55%;
+  margin-left: 37%;
+  position: absolute;
+}
+
+#createpicteam {
+  border-radius: 50%;
+  height:415px;
+  width:59%;
   margin-left: 35%;
   position: absolute;
 }
 
-.heropic {
+.draftpic {
+
+  height:350px;
+  width:50%;
+  margin-top: 30px;
+  margin-left: 25%;
+  position: absolute;
+}
+
+.draft-details {
+  text-align: center;
+  list-style-type: none;
+  padding-top: 20px;
+  padding-bottom: 7px;
+}
+
+.draft-list {
+  margin: 50px;
+
+}
+
+
+
+.homepic {
   border-radius: 50%;
   height:400px;
-  width:50%;
+  width:30%;
   display: block;
   margin: auto;
 }
@@ -37,6 +90,17 @@
   opacity: 0.2;
   height: 100%;
   width: 100%;
+
+}
+
+footer {
+  height: 90px;
+  text-align: center;
+  margin-top: 15%;
+  padding-top: 20px;
+  background-color: #001353;
+  color: white;
+
 }
 
 
@@ -82,3 +146,8 @@ label {
   padding-bottom: 10px;
 
 }
+
+nav {
+  background-color: #001353;
+}
+

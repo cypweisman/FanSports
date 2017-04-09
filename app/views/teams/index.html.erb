@@ -2,7 +2,7 @@
 
 <div class="banner" >
   <div class="container-fluid">
-    <img class="heropic" src="<%= asset_path( '4031665498_26ed9d1932_b.jpg') %>"   />
+    <img class="homepic" src="<%= asset_path( 'tumblr_milcogJdzu1s5vsgio2_250.gif') %>"   />
  </div>
 </div>
 
@@ -11,8 +11,8 @@
     <%= form_for @draft, {action: "create"} do |f| %>
       <fieldset>
         <div class="form-field">
-         <label style="color: #001353;" for="num">Number of Rounds</label><br>
-          <%= f.number_field :number_of_rounds, type: "text", class: "form-control, col-sm-4", id: "num" %>
+         <label style="color: #001353;" for="num">Start A Draft</label><br>
+          <%= f.number_field :number_of_rounds, placeholder: "Number of Rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
         </div>
 
         <div class="form-field">

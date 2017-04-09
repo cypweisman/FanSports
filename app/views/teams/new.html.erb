@@ -1,19 +1,22 @@
+ <h2 style="padding: 40px;font-size: 40px; color: red; text-align: center;"> Create Political Party </h2>
+
 <div style="background-color: #8eb2ed;">
 
-  <div class="createpic">
-      <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
+  <div id="createpicteam" >
+      <img  id="createpicteam" src="<%= asset_path( 'Michelle_Obama_and_Meryl_Streep.jpg') %>"  />
   </div>
 
   <div id="create-form">
-    <h2 style="padding-bottom: 15px;">Create Team</h2>
+
+    <p style="padding: 15px;">(...to the right...that's a pretty awesome team)</p>
     <%= form_for @team, url: teams_path(@team), method: :post do |f| %>
       <div class="form-field">
-        <label for="name">Team Name</label><br>
+        <label for="name">Party Name</label><br>
         <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
       </div>
 
       <div class="form-field">
-        <label for="owner">Owner</label><br>
+        <label for="owner">Party Lead</label><br>
         <%= f.text_field :owner, type: "text", class: "form-control, col-sm-4", id: "owner" %>
       </div>
 

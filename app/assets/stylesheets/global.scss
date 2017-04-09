@@ -3,19 +3,11 @@
   display: inline-block;
   margin-left:60%;
   padding-bottom: 10px;
-
-}
-
-
-.logged_in-links {
-  margin-right: 80%;
-
 }
 
 .admin-link {
   padding-right: 10px;
 }
-
 
 .banner {
   margin-top: 10px;
@@ -28,6 +20,10 @@
   background-position: center;*/
 }
 
+#create-form {
+  margin: 40px;
+  padding-bottom: 10px;
+}
 
 .createpic {
   border-radius: 50%;
@@ -54,7 +50,6 @@
 }
 
 .draftpic {
-
   height:350px;
   width:50%;
   margin-top: 30px;
@@ -71,10 +66,11 @@
 
 .draft-list {
   margin: 50px;
-
 }
 
-
+.enter-site {
+  margin-top: 25px;
+}
 
 .homepic {
   border-radius: 50%;
@@ -84,13 +80,16 @@
   margin: auto;
 }
 
+fieldset {
+  text-align: center;
+}
+
 .flagpic {
   position: absolute;
   z-index: -1;
   opacity: 0.2;
   height: 100%;
   width: 100%;
-
 }
 
 footer {
@@ -100,12 +99,34 @@ footer {
   padding-top: 20px;
   background-color: #001353;
   color: white;
-
 }
 
+.form-field {
+  padding-bottom: 10px;
+  font-family: helvetica;
+}
 
-.party-list {
+#home-details {
+  margin: 15px;
+}
+
+label {
+  font-size: 25px;
+}
+
+.logged_in-links {
+  margin-right: 80%;
+}
+
+nav {
+  background-color: #001353;
+}
+
+.page-title {
+  padding: 40px;
+  font-size: 40px;
   color: red;
+  text-align: center;
 }
 
 .title {
@@ -113,41 +134,16 @@ footer {
   color: #001353;
   text-align: center;
   font-size: 70px;
-
 }
 
-h2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
 
-.form-field {
-  padding-bottom: 10px;
 
-  font-family: helvetica;
 
-}
 
-fieldset {
-  text-align: center;
-}
 
-label {
-  font-size: 25px;
-}
 
-#home-details {
-  margin: 15px;
 
-}
 
-#create-form {
-  margin: 40px;
-  padding-bottom: 10px;
 
-}
 
-nav {
-  background-color: #001353;
-}
 

@@ -1,36 +1,33 @@
-<h1 class="title">Draft Your Presidential Cabinet</h1>
-
-<div class="banner" >
-  <div class="container-fluid">
-    <img class="homepic" src="<%= asset_path( 'tumblr_milcogJdzu1s5vsgio2_250.gif') %>"   />
- </div>
-</div>
-
-<section id="home-details">
-  <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
-    <%= form_for @draft, {action: "create"} do |f| %>
-      <fieldset>
-        <div class="form-field">
-         <label style="color: #001353;" for="num">Start A Draft</label><br>
-          <%= f.number_field :number_of_rounds, placeholder: "Number of Rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
-        </div>
-
-        <div class="form-field">
-          <%= f.submit "Create Draft", class: "btn btn-primary", name: "commit", type: "submit" %>
-        </div>
-
-      </fieldset>
-    <% end %>
-
-
-
-  <h2 class="party-list">Political Parties</h2>
-  <div class="list-group">
-    <% @teams.each do |team| %>
-
-      <%= link_to "#{team.name}", team_path(team), class: "list-group-item" %>
-
-    <% end %>
+<div>
+  <h1 class="title">Draft Your Presidential Cabinet</h1>
+  <div class="banner" >
+    <div class="container-fluid">
+      <img class="homepic" src="<%= asset_path( 'tumblr_milcogJdzu1s5vsgio2_250.gif') %>"   />
+    </div>
   </div>
-</section>
 
+  <section id="home-details">
+    <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+    <div>
+      <%= form_for @draft, {action: "create"} do |f| %>
+        <fieldset>
+          <div class="form-field">
+           <label style="color: #001353;" for="num">Start A Draft</label><br>
+            <%= f.number_field :number_of_rounds, placeholder: "Number of Rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
+          </div>
+
+          <div class="form-field">
+            <%= f.submit "Create Draft", class: "btn btn-primary", name: "commit", type: "submit" %>
+          </div>
+
+        </fieldset>
+      <% end %>
+    </div>
+    <h2 style="color: red;">Political Parties</h2>
+    <div>
+      <% @teams.each do |team| %>
+        <%= link_to "#{team.name}", team_path(team), class: "list-group-item" %>
+      <% end %>
+    </div>
+  </section>
+</div>

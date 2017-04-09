@@ -1,33 +1,29 @@
- <h2 style="padding: 40px;font-size: 40px; color: red; text-align: center;"> Sign Free Agent</h2>
+<div>
+  <h2 class="page-title"> Sign Free Agent</h2>
 
-<div style="background-color: #8eb2ed;">
-
-  <div class="createpic">
-    <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
-  </div>
-
-  <div id="create-form">
-      <h2 style="padding-bottom: 15px;"><i style="color:red;"><%= @freeagent.name %></i> </h2>
-    <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
-
-      <div class="form-field">
-        <label for="name">Political Party</label><br>
-        <%= f.collection_select :team_id, @teams, :id, :name %>
+  <section>
+    <div style="background-color: #8eb2ed;">
+      <div class="createpic">
+        <img  class="createpic" src="<%= asset_path( 'Richard_Nixon_by_Edmund_S._Valtman_ppmsc.07955.jpg') %>"  />
       </div>
-
-      <div class="form-field">
-        <label for="name">Salary</label><br>
-        <%= f.number_field :salary,  type: "text", class: "form-control, col-sm-2", id: "salary" %>
-      </div>
-
-      <%= f.hidden_field :player_id, :value => @freeagent.id %>
-      <%= f.hidden_field :active, :value => :true %>
-
-      <div class="form-field">
-        <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
-      </div>
-
-    <% end %>
-   </div>
-
+      <div id="create-form">
+        <h2 style="padding-bottom: 15px;"><i style="color:red;"><%= @freeagent.name %></i> </h2>
+        <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
+          <div class="form-field">
+            <label for="name">Political Party</label><br>
+            <%= f.collection_select :team_id, @teams, :id, :name %>
+          </div>
+          <div class="form-field">
+            <label for="name">Salary</label><br>
+            <%= f.number_field :salary,  type: "text", class: "form-control, col-sm-2", id: "salary" %>
+          </div>
+          <%= f.hidden_field :player_id, :value => @freeagent.id %>
+          <%= f.hidden_field :active, :value => :true %>
+          <div class="form-field">
+            <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+          </div>
+        <% end %>
+       </div>
+    </div>
+  <section>
 </div>

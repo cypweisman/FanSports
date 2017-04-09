@@ -1,11 +1,15 @@
- <h2 style="padding: 40px;font-size: 40px; color: red; text-align: center;"><%= @player.name %></h2>
+<div>
+  <h2 class="page-title"><%= @player.name %></h2>
 
-<div style="background-color: #8eb2ed;">
-  <div style="padding-top: 25px;" id="create-form">
-     <div class="createpic">
-        <img  class="createpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
-    </div >
-    <h2>Competency: <%= @player.rating %></h2>
-    <h3>Active Salary: <%= @active_contract %></h3>
-  </div>
+  <section>
+    <div style="background-color: #8eb2ed;">
+      <div style="padding-top: 25px;" id="create-form">
+        <div class="createpic">
+            <img  class="createpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+        </div >
+        <h2>Competency: <%= @player.rating %></h2>
+        <h3>Active Salary: <%= @active_contract %></h3>
+      </div>
+    </div>
+  </section>
 </div>

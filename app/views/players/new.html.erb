@@ -1,30 +1,31 @@
- <h2 style="padding: 40px;font-size: 40px; color: red; text-align: center;"> Create Political Candidate </h2>
+<div>
+  <h2 class="page-title"> Create Political Candidate </h2>
 
-<div style="background-color: #c4342f;">
-
-  <div id="createpicplayer">
-      <img  id="createpicplayer" src="<%= asset_path( 'Rally_to_Restore_Sanity_andor_Fear_-_Colbert_2.jpg') %>"  />
-  </div>
-
-  <div id="create-form" style="padding-top: 15px;">
-
-    <%= form_for @player, url: players_path(@player), method: :post do |f| %>
-      <div class="form-field">
-        <label for="name">Candidate Name</label><br>
-        <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+  <section>
+    <div style="background-color: #c4342f;">
+      <div id="createpicplayer">
+        <img  id="createpicplayer" src="<%= asset_path( 'Rally_to_Restore_Sanity_andor_Fear_-_Colbert_2.jpg') %>"  />
       </div>
 
-      <div class="form-field">
-        <label for="rating">Competency</label><br>
-       <%= f.text_field :rating, type: "text", class: "form-control, col-sm-4", id: "rating" %>
+      <div id="create-form" style="padding-top: 15px;">
+        <%= form_for @player, url: players_path(@player), method: :post do |f| %>
+            <div class="form-field">
+              <label for="name">Candidate Name</label><br>
+              <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+            </div>
+
+            <div class="form-field">
+              <label for="rating">Competency</label><br>
+              <%= f.text_field :rating, type: "text", class: "form-control, col-sm-4", id: "rating" %>
+            </div>
+
+            <%= f.hidden_field :account_id, :value => session[:account_id] %>
+
+            <div class="form-field">
+              <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+            </div>
+          <% end %>
       </div>
-
-      <%= f.hidden_field :account_id, :value => session[:account_id] %>
-
-      <div class="form-field">
-        <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
-      </div>
-    <% end %>
-  </div>
-
+    </div>
+  </section>
 </div>

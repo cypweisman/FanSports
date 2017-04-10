@@ -19,11 +19,11 @@ class PlayersController < ApplicationController
   end
 
   def freeagents_index
-    @freeagents = Player.where(team_id: nil)
+    @freeagents = Player.where({:account_id => session[:account_id], :team_id => nil})
   end
 
   def player_params
-    params.require(:player).permit(:name, :rating)
+    params.require(:player).permit(:name, :rating, :account_id)
   end
 
 end

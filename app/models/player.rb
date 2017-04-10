@@ -5,6 +5,11 @@ class Player < ApplicationRecord
 
   def active_contract
     contract = self.contracts.where(active: true).last
-    contract.salary
+    #contract.salary
+    if contract != nil
+      return contract.salary
+    else
+      return "n/a"
+    end
   end
 end

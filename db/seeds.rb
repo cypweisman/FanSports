@@ -6,10 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 4.times do
-#   Team.create!(name: Faker::Team.name, owner: Faker::Name.name)
+# 2.times do
+#   Team.create!(name: Faker::Team.name, owner: Faker::Name.name, account_id: 1)
 # end
 
-40.times do
-  Player.create!(name: Faker::Name.name, rating: rand(1..10))
-end
+# 21.times do
+#   Player.create!(name: Faker::Name.name, rating: rand(1..10), account_id: 1)
+# end
+
+# 3.times do
+#   Team.create!(name: Faker::Team.name, owner: Faker::Name.name, account_id: 3)
+# end
+
+# 21.times do
+#   Player.create!(name: Faker::Name.name, rating: rand(1..10), account_id: 3)
+# end

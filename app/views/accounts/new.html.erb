@@ -1,0 +1,29 @@
+<div>
+  <section>
+    <h1 class="title">Draft Your Presidential Cabinet</h1>
+    <div class="banner" >
+      <div class="container-fluid">
+        <img class="homepic" src="<%= asset_path( 'tumblr_milcogJdzu1s5vsgio2_250.gif') %>"   />
+    </div>
+  </section>
+
+  <section class="enter-site">
+    <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
+    <h1 style="padding:15px;">Sign Up...</h1>
+    <p style="padding:15px;">How it works: you and your friends get trippy (in whatever way you see fit), then together you create political parties and political candidates that you can then draft to your presidential cabinet!</p>
+    <%= form_for @account, {action: "create"} do |f| %>
+      <fieldset>
+        <label for="account_name">Account Name</label><br>
+        <%= f.text_field :account_name %><br><br>
+
+        <label for="account_email">Account Email</label><br>
+        <%= f.email_field :account_email %><br><br>
+
+        <label for="password">Password</label><br>
+        <%= f.password_field :password %><br><br>
+        <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+      </fieldset>
+    <% end %>
+  </section>
+</div>
+

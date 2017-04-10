@@ -1,3 +1,16 @@
+
+.admin-links {
+  display: inline-block;
+  margin-left:60%;
+  padding-bottom: 10px;
+}
+#aaa {
+ background-image: url(/assets/Starsinthesky.jpg);
+}
+.admin-link {
+  padding-right: 10px;
+}
+
 .banner {
   margin-top: 10px;
   margin-bottom: 30px;
@@ -9,44 +22,148 @@
   background-position: center;*/
 }
 
-.heropic {
+#create-form {
+  margin: 40px;
+  padding-bottom: 10px;
+}
+
+.createpic {
+  border-radius: 50%;
+  height:350px;
+  width:55%;
+  margin-left: 38%;
+  position: absolute;
+}
+
+#createpicplayer {
+  border-radius: 50%;
+  height:430px;
+  width:55%;
+  margin-left: 37%;
+  position: absolute;
+}
+
+#createpicteam {
+  border-radius: 50%;
+  height:415px;
+  width:59%;
+  margin-left: 35%;
+  position: absolute;
+}
+
+.draftpic {
+  height:350px;
+  width:50%;
+  margin-top: 30px;
+  margin-left: 25%;
+  position: absolute;
+}
+
+.draft-details {
+  text-align: center;
+  list-style-type: none;
+  margin-top: 40px;
+  padding-bottom: 7px;
+}
+
+.draft-list {
+  margin: 50px;
+}
+
+.enter-site {
+  margin-top: 25px;
+}
+
+.homepic {
   border-radius: 50%;
   height:400px;
-  width:50%;
+  width:30%;
   display: block;
   margin: auto;
 }
 
+fieldset {
+  text-align: center;
+}
+
 .flagpic {
+  background-image: url(/assets/american-flag-1459201553ppe.jpg);
   position: absolute;
   z-index: -1;
   opacity: 0.2;
   height: 100%;
   width: 100%;
+  background-size: 100% 100%;
+
+
+   /*background-image: url("../images/american-flag-1459201553ppe.jpg");
+  background-size: 80%;
+  background-position: center;
+
+  position: absolute;
+  z-index: -1;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;*/
 }
 
-
-.party-list {
-  color: red;
-}
-
-h2 {
-  padding-top: 10px;
-  padding-bottom: 10px;
+footer {
+  height: 90px;
+  text-align: center;
+  margin-top: 15%;
+  padding-top: 20px;
+  background-color: #001353;
+  color: white;
 }
 
 .form-field {
   padding-bottom: 10px;
-  text-align: center;
   font-family: helvetica;
-  color: #001353;
+}
+
+#home-details {
+  margin: 15px;
 }
 
 label {
   font-size: 25px;
 }
 
-#home-details {
-  margin: 15px;
-
+.lil-banner {
+ width:600px;
+ height:328px;
 }
+
+.logged_in-links {
+  margin-right: 80%;
+}
+
+nav {
+  background-color: #001353;
+}
+
+.page-title {
+  padding: 40px;
+  font-size: 40px;
+  color: #bb0114;
+  text-align: center;
+}
+
+.title {
+  font-family: Impact, sans-serif;
+  color: #001353;
+  text-align: center;
+  font-size: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

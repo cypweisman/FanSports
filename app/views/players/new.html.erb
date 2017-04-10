@@ -1,7 +1,31 @@
-<h1>Create Player</h1>
+<div>
+  <h2 class="page-title"> Create Political Candidate </h2>
 
-<%= form_for @player, url: players_path(@player), method: :post do |f| %>
-  Player Name: <%= f.text_field :name %><br />
-  Player Rating : <%= f.text_field :rating %><br />
-  <%= f.submit %>
-<% end %>
+  <section>
+    <div style="background-color:#bb0114; color:white;">
+      <div id="createpicplayer">
+        <img  id="createpicplayer" src="<%= asset_path( 'Rally_to_Restore_Sanity_andor_Fear_-_Colbert_2.jpg') %>"  />
+      </div>
+
+      <div id="create-form" style="padding-top: 15px;">
+        <%= form_for @player, url: players_path(@player), method: :post do |f| %>
+            <div class="form-field">
+              <label for="name">Candidate Name</label><br>
+              <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+            </div>
+
+            <div class="form-field">
+              <label for="rating">Competency</label><br>
+              <%= f.text_field :rating, type: "text", class: "form-control, col-sm-4", id: "rating" %>
+            </div>
+
+            <%= f.hidden_field :account_id, :value => session[:account_id] %>
+
+            <div class="form-field">
+              <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </section>
+</div>

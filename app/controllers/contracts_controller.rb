@@ -5,6 +5,8 @@ class ContractsController < ApplicationController
   def new
     @freeagent = Player.find(params[:freeagent_id])
     @contract = Contract.new
+    @teams = Team.where(account_id: session[:account_id])
+
   end
 
   def create
@@ -14,8 +16,8 @@ class ContractsController < ApplicationController
    @contract = Contract.new(contract_params)
     if @contract.save
       #take of failed save in both cases
-      if @draft
-        @draft = Draft.find(params[:draft_id])
+      if session[:draft_id] != nil
+        @draft = Draft.find(session[:draft_id])
         next_pick(@draft)
         redirect_to draft_path(@draft.id)
       else

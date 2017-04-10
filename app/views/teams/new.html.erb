@@ -1,7 +1,32 @@
-<h1>Create Team</h1>
+<div>
+  <h2 class="page-title"> Create Political Party </h2>
 
-<%= form_for @team, url: teams_path(@team), method: :post do |f| %>
-  Team Name: <%= f.text_field :name %><br />
-  Team Owner : <%= f.text_field :owner %><br />
-  <%= f.submit %>
-<% end %>
+  <section>
+    <div style="background-color:#001353;color:white;">
+      <div id="createpicteam" >
+        <img  id="createpicteam" src="<%= asset_path( 'Michelle_Obama_and_Meryl_Streep.jpg') %>"  />
+      </div>
+
+      <div id="create-form">
+        <p style="padding: 15px;">(...to the right...that's a pretty awesome team)</p>
+          <%= form_for @team, url: teams_path(@team), method: :post do |f| %>
+            <div class="form-field">
+              <label for="name">Party Name</label><br>
+              <%= f.text_field :name, type: "text", class: "form-control, col-sm-4", id: "name" %>
+            </div>
+
+            <div class="form-field">
+              <label for="owner">Party Lead</label><br>
+              <%= f.text_field :owner, type: "text", class: "form-control, col-sm-4", id: "owner" %>
+            </div>
+
+            <%= f.hidden_field :account_id, :value => session[:account_id] %>
+
+            <div class="form-field">
+              <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </section>
+</div>

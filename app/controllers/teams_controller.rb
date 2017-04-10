@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
 
   def index
-    @teams = Team.all
+    @teams = Team.where(account_id: session[:account_id])
     @draft = Draft.new
   end
 
@@ -23,7 +23,7 @@ class TeamsController < ApplicationController
   end
 
 def team_params
-  params.require(:team).permit(:name, :owner)
+  params.require(:team).permit(:name, :owner, :account_id)
 end
 
 end

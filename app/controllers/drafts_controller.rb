@@ -10,6 +10,7 @@ class DraftsController < ApplicationController
       create_draft_variables(@draft.id)
       redirect_to draft_path(@draft)
     else
+      @errors = @account.errors.full_messages
       render teams_path
     end
   end

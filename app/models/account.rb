@@ -25,7 +25,7 @@ class Account < ApplicationRecord
   end
 
   def password_length
-    if @plain_text_password.length < MIN_LENGTH || @plain_text_password.length > MAX_LENGTH
+    if @new_password.length < MIN_LENGTH || @new_password.length > MAX_LENGTH
       errors.add(:password, "must be between #{MIN_LENGTH} and #{MAX_LENGTH} letters long")
     end
   end

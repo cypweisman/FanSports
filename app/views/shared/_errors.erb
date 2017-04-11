@@ -1,6 +1,6 @@
-<% if errors %>
+<% if @errors %>
 	<div class="error_box">
-		<% errors.each do |error| %>
+		<% @errors.each do |error| %>
 			<p><%= error %></p>
 		<% end %>
 	</div>

@@ -21,6 +21,8 @@
 
             <%= f.hidden_field :account_id, :value => session[:account_id] %>
 
+            <%= render partial:"shared/errors", locals:{errors: @errors} %>
+
             <div class="form-field">
               <%= f.submit "Create", class: "btn btn-primary", name: "commit", type: "submit" %>
             </div>

@@ -6,6 +6,10 @@ class Account < ApplicationRecord
   validates :account_email, :uniqueness => true
   validate :password_length
 
+  # Authentication constants
+  MIN_LENGTH = 6
+  MAX_LENGTH = 50
+
   def password
     @password ||= BCrypt::Password.new(password_hash)
   end
@@ -21,8 +25,8 @@ class Account < ApplicationRecord
   end
 
   def password_length
-    if @new_password.length < 6
-      errors.add(:password, "must be greater than 6")
+    if @plain_text_password.length < MIN_LENGTH || @plain_text_password.length > MAX_LENGTH
+      errors.add(:password, "must be between #{MIN_LENGTH} and #{MAX_LENGTH} letters long")
     end
   end
 

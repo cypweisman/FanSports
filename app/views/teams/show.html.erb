@@ -1,13 +1,13 @@
 <div>
   <h2 class="page-title"><%= @team.name %></h2>
 
-  <section>
-    <img class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
-    <h3 style="color: red; padding: 10px 0px 0px 10px;">Party Lead: <%= @team.owner %></h3>
+  <section style="background-color: #001b7f;">
+    <img style="float:left;" class="lil-banner" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
 
     <div id="create-form" style="text-align: center;">
-      <div style="margin: auto;" class="list-group, col-sm-4">
-        <h3 style="color: red;">Cabinet Members</h3>
+      <div style="margin-left: 690px;color: red;" class="list-group, col-sm-4">
+    <h3 style="padding: 10px 0px 10px 0px;">Party Lead: <%= @team.owner %></h3>
+        <h3>Cabinet Members</h3>
         <% @team.players.each do |player| %>
           <%= link_to "#{player.name}", player_path(player), class: "list-group-item" %>
         <% end %>

@@ -1,4 +1,5 @@
-<div>
+<div >
+
 
   <section class="draft-details">
     <h2><b style="color:red;">Draft Order</b></h2>
@@ -20,9 +21,9 @@
   </section>
 
   <section class="draft-list" >
-    <div id="team_rosters" style="float: right;">
+    <div style="margin-left: 750px; position:absolute;height:100%;">
       <h2 style="color: red;">Party Rosters</h2>
-      <ol >
+      <ol  >
         <% @teams_objects.each do |team| %>
         <li><%= team.name %></li>
           <% team.players.each do |player| %>
@@ -36,8 +37,8 @@
   </section>
 
   <%if @draft.open %>
-   <section class="draft-list">
-      <h2 style="color: red;">Draft Candidates</h2>
+   <section class="draft-list" style="margin-top: 0px;margin-left: 25%;position: abs;">
+      <h2 style="color: red; ">Draft Candidates</h2>
       <% @free_agents.each do |free_agent| %>
         <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
           <%= f.hidden_field :team_id, :value => @drafting_team["id"] %>
@@ -54,4 +55,6 @@
       <%= link_to "Go to Teams Page", teams_path %>
     <% end %>
   </section>
+
+
 </div>

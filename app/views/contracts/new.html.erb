@@ -9,6 +9,7 @@
       <div id="create-form">
         <h2 style="padding-bottom: 15px;"><i style="color:#001b7f;"><%= @freeagent.name %></i> </h2>
         <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
+          <%= render partial:"shared/errors", locals:{errors: @errors} %>
           <div class="form-field">
             <label for="name">Political Party</label><br>
             <%= f.collection_select :team_id, @teams, :id, :name %>

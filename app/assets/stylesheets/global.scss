@@ -54,9 +54,9 @@
 .draftpic {
   height:350px;
   width:50%;
-  /* margin-top: 30px;*/
   margin-left: 25%;
- /*position: absolute;*/
+  margin-right: 25%;
+  position: absolute;
 }
 
 .draft-details {
@@ -67,7 +67,7 @@
 }
 
 .draft-list {
-
+  margin-left: 50px;
 }
 
 .enter-site {
@@ -101,7 +101,7 @@ fieldset {
   position: absolute;
   z-index: -1;
   opacity: 0.2;
-  height: 100%;
+  height: 70%;
   width: 100%;
   background-size: 100% 100%;
 
@@ -141,8 +141,8 @@ label {
 }
 
 .lil-banner {
- width:600px;
- height:328px;
+  width:33%;
+  height:256px;
 }
 
 .logged_in-links {

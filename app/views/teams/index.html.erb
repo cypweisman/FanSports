@@ -26,7 +26,7 @@
       <% end %>
     </div>
     <h2 style="color: red;">Political Parties</h2>
-    <div>
+    <div style="overflow: auto;">
       <% @teams.each do |team| %>
         <%= link_to "#{team.name}", team_path(team), class: "list-group-item" %>
       <% end %>

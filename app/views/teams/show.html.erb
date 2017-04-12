@@ -1,19 +1,17 @@
 <div>
   <h2 class="page-title"><%= @team.name %></h2>
-
-  <section style="background-color: #001b7f;">
-    <img style="float:left;" class="lil-banner" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
-
-    <div id="create-form" style="text-align: center;">
-      <div style="margin-left: 690px;color: red;" class="list-group, col-sm-4">
-    <h3 style="padding: 10px 0px 10px 0px;">Party Lead: <%= @team.owner %></h3>
-        <h3>Cabinet Members</h3>
+  <section style="background-color: #001b7f;padding: 30px;">
+    <img style="display: inline-block; vertical-align: top;" class="lil-banner" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"/>
+    <div style="display: inline-block; vertical-align: top; padding-left: 20px; padding-right: 20px;" class="list-group, col-sm-4">
+      <h3 style="padding: 10px 0px 10px 0px;color: red;">Party Lead: <%= @team.owner %></h3>
+        <h3 style="padding: 0px 0px 20px 0px;color: red;">Cabinet Members</h3>
         <% @team.players.each do |player| %>
           <%= link_to "#{player.name}", player_path(player), class: "list-group-item" %>
         <% end %>
-      </div>
     </div>
+    <img style="display: inline-block; vertical-align: top;" class="lil-banner" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"/>
   </section>
+
 </div>
 
 

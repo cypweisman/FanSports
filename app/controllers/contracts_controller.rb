@@ -20,9 +20,14 @@ class ContractsController < ApplicationController
         next_pick(@draft)
         redirect_to draft_path(@draft.id)
       else
-        @errors = @player.errors.full_messages
         redirect_to player_path(@contract.player_id)
       end
+    else 
+      @errors = @contract.errors.full_messages
+      @freeagent = Player.find(@contract.player_id)
+      @contract = Contract.new
+      @teams = Team.where(account_id: session[:account_id])
+      render action: "new", freeagent_id: @contract.player_id
     end
   end
 

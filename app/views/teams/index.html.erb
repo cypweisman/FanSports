@@ -13,9 +13,9 @@
         <fieldset>
           <div class="form-field">
            <label style="color: #001353;" for="num">Start A Draft</label><br>
+           <%= render partial:"shared/errors", locals:{errors: @errors} %>
             <%= f.number_field :number_of_rounds, placeholder: "Number of Rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
           </div>
-
           <div class="form-field">
             <%= f.submit "Create Draft", class: "btn btn-primary", name: "commit", type: "submit" %>
           </div>

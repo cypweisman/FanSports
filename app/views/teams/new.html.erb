@@ -9,6 +9,7 @@
 
       <div id="create-form">
         <p style="padding: 15px;">(...to the right...that's a pretty awesome team)</p>
+        <%= render partial:"shared/errors", locals:{errors: @errors} %>
           <%= form_for @team, url: teams_path(@team), method: :post do |f| %>
             <div class="form-field">
               <label for="name">Party Name</label><br>

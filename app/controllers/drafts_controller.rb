@@ -10,7 +10,10 @@ class DraftsController < ApplicationController
       create_draft_variables(@draft.id)
       redirect_to draft_path(@draft)
     else
-      render teams_path
+      @errors = @draft.errors.full_messages
+      @teams = Team.where(account_id: session[:account_id])
+      @draft = Draft.new
+      render "teams/index"
     end
   end
 

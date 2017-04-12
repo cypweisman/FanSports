@@ -11,6 +11,7 @@
     <img  class="flagpic" src="<%= asset_path( 'american-flag-1459201553ppe.jpg') %>"  />
     <h1 style="padding:15px;">Sign Up...</h1>
     <p style="padding:15px;">How it works: you and your friends get trippy (in whatever way you see fit), then together you create political parties and political candidates that you can then draft to your presidential cabinet!</p>
+    <%= render partial:"shared/errors", locals:{errors: @errors} %>
     <%= form_for @account, {action: "create"} do |f| %>
       <fieldset>
         <label for="account_name">Account Name</label><br>

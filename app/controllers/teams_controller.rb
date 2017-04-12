@@ -14,6 +14,7 @@ class TeamsController < ApplicationController
     if @team.save
       redirect_to team_path(@team)
     else
+      @errors = @team.errors.full_messages
       render new_team_path
     end
   end

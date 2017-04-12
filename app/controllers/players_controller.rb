@@ -9,6 +9,7 @@ class PlayersController < ApplicationController
     if @player.save
       redirect_to player_path(@player)
     else
+      @errors = @player.errors.full_messages
       render new_player_path
     end
   end

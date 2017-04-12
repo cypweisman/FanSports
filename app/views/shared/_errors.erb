@@ -1,0 +1,10 @@
+<% if @errors %>
+	<div class="error-box">
+		<i class="glyphicon glyphicon-exclamation-sign"></i>
+		<div>
+		<% @errors.each do |error| %>
+			<p><%= error %></p>
+		<% end %>
+		</div>
+	</div>
+<% end %>

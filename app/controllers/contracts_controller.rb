@@ -6,7 +6,6 @@ class ContractsController < ApplicationController
     @freeagent = Player.find(params[:freeagent_id])
     @contract = Contract.new
     @teams = Team.where(account_id: session[:account_id])
-
   end
 
   def create
@@ -21,6 +20,7 @@ class ContractsController < ApplicationController
         next_pick(@draft)
         redirect_to draft_path(@draft.id)
       else
+        @errors = @player.errors.full_messages
         redirect_to player_path(@contract.player_id)
       end
     end

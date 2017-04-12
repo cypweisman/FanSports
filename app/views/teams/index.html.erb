@@ -11,13 +11,15 @@
     <div>
       <%= form_for @draft, {action: "create"} do |f| %>
         <fieldset>
-          <div class="form-field">
-           <label style="color: #001353;" for="num">Start A Draft</label><br>
-           <%= render partial:"shared/errors", locals:{errors: @errors} %>
-            <%= f.number_field :number_of_rounds, placeholder: "Number of Rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
-          </div>
-          <div class="form-field">
-            <%= f.submit "Create Draft", class: "btn btn-primary", name: "commit", type: "submit" %>
+          <div class="form-field" style=" display: inline-block;">
+
+            <label style="color: #001353;padding-right:10px;" for="num">Start A Draft</label>
+
+            <%= render partial:"shared/errors", locals:{errors: @errors} %>
+
+            <%= f.number_field :number_of_rounds, placeholder: "# of rounds", type: "text", class: "form-control, col-sm-4", id: "num" %>
+
+            <%= f.submit "Create Draft", class: "btn btn-primary btn-sm", name: "commit", type: "submit" %>
           </div>
 
         </fieldset>

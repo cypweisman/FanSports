@@ -12,46 +12,46 @@
     <p><b>On The Clock:</b><b style="color:blue;"><%= @drafting_team["name"] %></b></p>
   </section>
 
-  <section >
-    <div class="draftpic">
-      <img  class="draftpic" src="<%= asset_path( 'Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg') %>"  />
-      <p style="margin-top: 65%;margin-left: 14%; ">You would be a fool not to draft me to your political cabinet</p>
-    </div>
-  </section>
 
-  <section class="draft-list" >
-    <div id="team_rosters" style="float: right;">
-      <h2 style="color: red;">Party Rosters</h2>
-      <ol >
-        <% @teams_objects.each do |team| %>
-        <li><%= team.name %></li>
-          <% team.players.each do |player| %>
-          <ul>
-            <li><%= player.name %></li>
-          </ul>
+  <div class="draftpic">
+        <img  class="draftpic" src="<%= asset_path( 'Kanye_West_at_the_2009_Tribeca_Film_Festival.jpg') %>"  />
+        <p style="margin-top: 75%;width:50%;text-align: center;margin-left: 25%;color:white;">You would be a fool not to draft me to your political cabinet</p>
+      </div>
+  <div style="background-color: #001b7f;color:white;">
+    <section class="draft-list" style="display: inline-block;vertical-align: top;width:25%;">
+      <div id="team_rosters">
+        <h2 style="color: red;">Party Rosters</h2>
+        <ol >
+          <% @teams_objects.each do |team| %>
+          <li><%= team.name %></li>
+            <% team.players.each do |player| %>
+            <ul>
+              <li><%= player.name %></li>
+            </ul>
+            <% end %>
+          <% end %>
+        </ol>
+      </div>
+    </section>
+
+    <%if @draft.open %>
+     <section class="draft-list" style="display: inline-block;vertical-align: top;width:20%;margin-left: 38%;">
+        <h2 style="color: red;">Draft Candidates</h2>
+        <% @free_agents.each do |free_agent| %>
+          <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
+            <%= f.hidden_field :team_id, :value => @drafting_team["id"] %>
+            <%= f.hidden_field :salary, :value => 1000 %>
+            <%= f.hidden_field :player_id, :value =>free_agent.id %>
+            <%= f.hidden_field :active, :value => :true %>
+            <div class="form-field">
+              <%= f.submit "#{free_agent.name}", class: "btn btn-primary", name: "commit", type: "submit" %>
+            </div>
           <% end %>
         <% end %>
-      </ol>
-    </div>
-  </section>
-
-  <%if @draft.open %>
-   <section class="draft-list">
-      <h2 style="color: red;">Draft Candidates</h2>
-      <% @free_agents.each do |free_agent| %>
-        <%= form_for @contract, url: contracts_path(@contract), method: :post do |f| %>
-          <%= f.hidden_field :team_id, :value => @drafting_team["id"] %>
-          <%= f.hidden_field :salary, :value => 1000 %>
-          <%= f.hidden_field :player_id, :value =>free_agent.id %>
-          <%= f.hidden_field :active, :value => :true %>
-          <div class="form-field">
-            <%= f.submit "#{free_agent.name}", class: "btn btn-primary", name: "commit", type: "submit" %>
-          </div>
-        <% end %>
+      <% else %>
+        <h2>Draft is closed!</h2>
+        <%= link_to "Go to Teams Page", teams_path %>
       <% end %>
-    <% else %>
-      <h2>Draft is closed!</h2>
-      <%= link_to "Go to Teams Page", teams_path %>
-    <% end %>
-  </section>
+    </section>
+  </div>
 </div>
